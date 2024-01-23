@@ -1,0 +1,71 @@
+/* Max width: 900px */
+@media (max-width: 900px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+/* Max width: 600px */
+@media (max-width: 600px) {
+  html {
+    font-size: 35%;
+  }
+}
+
+/* Max width: 480px */
+@media (max-width: 480px) {
+  html {
+    font-size: 30%;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  .landing {
+    min-height: 50vh;
+  }
+  .banner {
+    top: 40%;
+  }
+
+  .banner-content {
+    width: 90%;
+  }
+
+  .cta-btn {
+    margin-top: 1rem;
+  }
+
+  .landing-img img {
+    display: none;
+  }
+
+  .banner-logo__company {
+    width: 150px;
+  }
+
+  .about {
+    justify-content: center;
+    height: auto;
+    padding: 5rem 2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-img {
+    display: none;
+  }
+
+  #projects {
+    display: none;
+  }
+}

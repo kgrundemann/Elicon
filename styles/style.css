@@ -19,6 +19,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-padding-top: 50px;
 }
 
 body.no-scroll {
@@ -41,29 +42,17 @@ body.no-scroll {
 }
 
 .logo-company {
-  width: 200px;
-}
-
-.logo-elicon {
-  display: flex;
-  align-items: center;
-}
-
-.logo-elicon a {
-  font-family: 'Oswald', cursive;
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
+  width: 150px;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
+  list-style: none;
 }
 
-.nav-list div {
+.nav-list li {
   margin: 0 1rem;
-  display: flex;
-  align-items: center;
   cursor: pointer;
 }
 
@@ -73,15 +62,54 @@ body.no-scroll {
   transition: color 0.3s ease;
 }
 
-.nav-list div:hover span,
-.nav-list div:hover i {
+.nav-list li:hover span,
+.nav-list li:hover i {
   color: var(--hover-color);
 }
 /* END NAVBAR */
 
+/* HAMBURGER MENU */
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a {
+  padding: 1rem;
+  text-align: center;
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
 /* LANDING */
 .landing {
-  width: 100%;
   position: relative;
   overflow: hidden;
   min-height: 80vh;
@@ -90,16 +118,17 @@ body.no-scroll {
 .landing-img {
   width: 100%;
   position: absolute;
-  top: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  z-index: -1;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
 }
 
 .landing-img img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
 .banner-logo__company {
@@ -108,18 +137,19 @@ body.no-scroll {
 
 .banner {
   position: absolute;
-  top: 8rem;
-  left: 18rem;
-  padding-left: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .banner-content {
   width: 40rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .banner-subheading {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #34495e;
   margin-bottom: 1rem;
 }
@@ -144,12 +174,12 @@ body.no-scroll {
 /* END OF LANDING */
 
 /* ABOUT */
-.about {
+#about {
   padding: 4rem 2rem;
   background-color: var(--background-color);
 }
 
-.about h1 {
+#about h1 {
   font-size: 2.2rem;
   color: var(--secondary-color);
   margin: 1rem 1.5rem;
@@ -209,7 +239,7 @@ body.no-scroll {
 /* END OF ABOUT */
 
 /* PROJECTS */
-.projects {
+#projects {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -331,13 +361,13 @@ body.no-scroll {
 /* END OF PROJECTS  */
 
 /* REFERENCES */
-.references {
+#references {
   text-align: center;
   padding: 4rem 0;
   background-color: var(--background-color);
 }
 
-.references h1 {
+#references h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: var(--secondary-color);
@@ -369,7 +399,7 @@ body.no-scroll {
 /* END OF REFERENCES */
 
 /* CONTACT */
-.contact {
+#contact {
   display: flex;
   align-items: center;
   justify-content: center;

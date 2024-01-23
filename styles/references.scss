@@ -1,0 +1,34 @@
+#references {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: var(--background-color);
+}
+
+#references h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.logo {
+  width: 17%;
+  height: auto;
+  margin: 0 3%;
+  filter: grayscale(100%);
+  transition: filter 0.5s, transform 0.5s;
+}
+.logo.custom-size {
+  width: 8%;
+}
+
+.logo:hover {
+  filter: grayscale(0%);
+  transform: scale(0.9);
+}
