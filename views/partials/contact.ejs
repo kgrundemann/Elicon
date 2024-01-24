@@ -1,0 +1,32 @@
+<section id="contact">
+  <div class="contact-info">
+    <h2>Skontaktuj się z nami:</h2>
+    <p>Email: biuro@elicon.com</p>
+    <p>Telefon: +48 608 626 220</p>
+  </div>
+  <button class="popup-open">Napisz do nas</button>
+  <!-- POPUP -->
+  <div class="popup-wrapper">
+    <div class="popup">
+      <div class="close-btn"></div>
+      <form id="contactForm" class="popup-form" method="post" action="/send">
+        <h2 class="popup-form__title">Formularz kontaktowy</h2>
+        <label for="name">Imię i Nazwisko</label>
+        <input type="text" name="name" class="popup-form__input" />
+
+        <label for="email">Adres Email</label>
+        <input type="text" name="email" class="popup-form__input" />
+
+        <label for="subject">Temat</label>
+        <input type="text" name="subject" class="popup-form__input" />
+
+        <label for="message">Wiadomość</label>
+        <textarea name="message" class="popup-form__input"></textarea>
+
+        <button type="submit" class="popup-form__submit">Wyślij</button>
+        <div class="popup-message" style="display: none"></div>
+      </form>
+    </div>
+  </div>
+  <!-- END OF POPUP  -->
+</section>
