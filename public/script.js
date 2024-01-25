@@ -1,4 +1,4 @@
-const mobileMenu = document.getElementById('mobileMenu');
+const logo = document.getElementById('logo');
 const popup = document.querySelector('.popup-wrapper');
 const popupForm = document.querySelector('.popup-form');
 const popupBtn = document.querySelector('.popup-open');
@@ -10,10 +10,7 @@ const contactEmail = document.getElementById('email');
 const contactSubject = document.getElementById('subject');
 const contactMessage = document.getElementById('message');
 
-function toggleMenu() {
-  mobileMenu.style.display =
-    mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-}
+logo.addEventListener('click', reloadPage);
 
 popupBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -35,6 +32,10 @@ popup.addEventListener('click', (e) => {
     removePopup();
   } else return;
 });
+
+function reloadPage() {
+  location.reload();
+}
 
 function showPopup() {
   popup.classList.add('active');

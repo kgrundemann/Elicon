@@ -3,12 +3,36 @@
   html {
     font-size: 45%;
   }
+
+  .landing {
+    height: 50vh;
+  }
+
+  #projects {
+    height: 50vh;
+  }
 }
 
 /* Max width: 600px */
 @media (max-width: 600px) {
   html {
     font-size: 35%;
+  }
+
+  .landing {
+    height: 30vh;
+  }
+
+  .banner {
+    top: 50%;
+  }
+
+  .banner-logo__company {
+    width: 200px;
+  }
+
+  #projects {
+    height: 40vh;
   }
 }
 
@@ -18,20 +42,15 @@
     font-size: 30%;
   }
 
-  .nav-list {
-    display: none;
+  .logo-company {
+    width: 100px;
   }
 
-  .hamburger-icon {
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
-  }
   .landing {
-    min-height: 50vh;
+    height: 25vh;
   }
   .banner {
-    top: 40%;
+    top: 50%;
   }
 
   .banner-content {
@@ -40,10 +59,6 @@
 
   .cta-btn {
     margin-top: 1rem;
-  }
-
-  .landing-img img {
-    display: none;
   }
 
   .banner-logo__company {
