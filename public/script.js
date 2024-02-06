@@ -1,4 +1,3 @@
-const logo = document.getElementById('logo');
 const popup = document.querySelector('.popup-wrapper');
 const popupForm = document.querySelector('.popup-form');
 const popupBtn = document.querySelector('.popup-open');
@@ -10,7 +9,8 @@ const contactEmail = document.getElementById('email');
 const contactSubject = document.getElementById('subject');
 const contactMessage = document.getElementById('message');
 
-logo.addEventListener('click', reloadPage);
+const gallery = document.querySelector('.gallery');
+const modal = document.querySelector('.modal-reference');
 
 popupBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -54,7 +54,6 @@ function bodyScroll() {
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-
     document.querySelector(this.getAttribute('href')).scrollIntoView({
       behavior: 'smooth',
     });
@@ -96,3 +95,34 @@ contactForm.addEventListener('submit', (e) => {
   };
   xhr.send(JSON.stringify(formData));
 });
+
+gallery.addEventListener('click', function (event) {
+  const image = event.target.closest('.logo');
+
+  if (image) {
+    const dataModalSrc = image.getAttribute('data-modal-src');
+    const captionText = image.getAttribute('alt');
+
+    if (dataModalSrc) {
+      modal.style.display = 'block';
+      const modalContent = modal.querySelector('.modal-content');
+      const caption = modal.querySelector('.caption');
+
+      if (modalContent) {
+        modalContent.setAttribute('src', dataModalSrc);
+        bodyScroll();
+      } else {
+        console.error('Nie znaleziono zawartości modala');
+      }
+    } else {
+      console.error('Brak atrybutu data-modal-src');
+    }
+  }
+});
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+    bodyScroll();
+  }
+};
