@@ -1,3 +1,5 @@
+const logo = document.querySelector('.logo-company');
+
 const popup = document.querySelector('.popup-wrapper');
 const popupForm = document.querySelector('.popup-form');
 const popupBtn = document.querySelector('.popup-open');
@@ -33,9 +35,10 @@ popup.addEventListener('click', (e) => {
   } else return;
 });
 
-function reloadPage() {
+logo.addEventListener('click', (e) => {
+  e.preventDefault();
   location.reload();
-}
+});
 
 function showPopup() {
   popup.classList.add('active');

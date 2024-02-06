@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -21,16 +23,16 @@ app.post('/', (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'krzgrund@gmail.com',
-      pass: 'uqpzywuzhmohvdcy',
+      user: process.env.GMAIL_USERNAME,
+      pass: process.env.GMAIL_PASSWORD,
     },
   });
 
   const mail_option = {
     from: req.body.email,
-    to: 'krzgrund@gmail.com',
+    to: process.env.GMAIL_USERNAME,
     subject: `Message from ${req.body.name}: ${req.body.subject}`,
-    text: req.body.message,
+    text: `From: ${req.body.name} <${req.body.email}>\n\n${req.body.message}`,
   };
 
   transporter.sendMail(mail_option, (error, info) => {

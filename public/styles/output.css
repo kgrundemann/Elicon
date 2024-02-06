@@ -41,6 +41,7 @@ body.no-scroll {
 
 .logo-company {
   width: 180px;
+  cursor: pointer;
 }
 
 .nav-list {
